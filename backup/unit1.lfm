@@ -1,0 +1,233 @@
+object Form1: TForm1
+  Left = 285
+  Height = 700
+  Top = 247
+  Width = 1024
+  Caption = 'BACKUP INFORMÁTICA'
+  ClientHeight = 700
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object Label1: TLabel
+    Left = 90
+    Height = 15
+    Top = 8
+    Width = 31
+    Caption = 'Local:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 39
+    Height = 15
+    Top = 40
+    Width = 82
+    Caption = 'Nº Patrimôneo:'
+    ParentColor = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 192
+    Top = 63
+    Width = 240
+    Caption = 'Data Atual'
+    ClientHeight = 172
+    ClientWidth = 236
+    TabOrder = 0
+    object CalendarData: TCalendar
+      Left = 5
+      Height = 160
+      Top = 0
+      Width = 225
+      DateTime = 44358
+      TabOrder = 0
+    end
+  end
+  object EditLocal: TEdit
+    Left = 128
+    Height = 23
+    Top = 8
+    Width = 128
+    TabOrder = 1
+  end
+  object MaskEditPatrimoneo: TMaskEdit
+    Left = 128
+    Height = 23
+    Top = 39
+    Width = 128
+    CharCase = ecNormal
+    MaxLength = 6
+    TabOrder = 2
+    EditMask = '999999;1;_'
+    Text = '      '
+    SpaceChar = '_'
+  end
+  object EditLocalOrigem: TEdit
+    Left = 128
+    Height = 23
+    Top = 256
+    Width = 128
+    TabOrder = 3
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 256
+    Width = 105
+    Caption = 'Pasta Users Origem:'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 16
+    Height = 15
+    Top = 288
+    Width = 102
+    Caption = 'Pasta Users Destino'
+    ParentColor = False
+  end
+  object EditLocalDestino: TEdit
+    Left = 128
+    Height = 23
+    Top = 288
+    Width = 128
+    TabOrder = 4
+  end
+  object ButtonOrigem: TButton
+    Left = 264
+    Height = 25
+    Top = 256
+    Width = 24
+    Caption = '...'
+    OnClick = ButtonOrigemClick
+    TabOrder = 5
+  end
+  object ButtonDestino: TButton
+    Left = 264
+    Height = 25
+    Top = 288
+    Width = 24
+    Caption = '...'
+    OnClick = ButtonDestinoClick
+    TabOrder = 6
+  end
+  object ProgressBarProgresso: TProgressBar
+    Left = 8
+    Height = 20
+    Top = 376
+    Width = 1000
+    TabOrder = 7
+  end
+  object ButtonOk: TButton
+    Left = 8
+    Height = 25
+    Top = 336
+    Width = 279
+    Caption = 'Iniciar cópia de arquivos'
+    OnClick = ButtonOkClick
+    TabOrder = 8
+  end
+  object LabelPastaBackup: TLabel
+    Left = 16
+    Height = 15
+    Top = 316
+    Width = 185
+    Caption = 'Backup Local PC000000 11-06-2021'
+    ParentColor = False
+  end
+  object GroupBox2: TGroupBox
+    Left = 296
+    Height = 348
+    Top = 8
+    Width = 232
+    Caption = 'Usuários a serem copiados'
+    ClientHeight = 328
+    ClientWidth = 228
+    TabOrder = 9
+    object ListBoxUsuarios: TListBox
+      Left = 6
+      Height = 286
+      Top = 2
+      Width = 216
+      ItemHeight = 0
+      MultiSelect = True
+      TabOrder = 0
+    end
+    object ButtonRemoverUsuariosDaLista: TButton
+      Left = 6
+      Height = 25
+      Top = 298
+      Width = 216
+      Caption = 'Remover usuários da lista'
+      TabOrder = 1
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 528
+    Height = 348
+    Top = 8
+    Width = 488
+    Caption = 'Arquivos a serem copiados'
+    ClientHeight = 328
+    ClientWidth = 484
+    TabOrder = 10
+    object ListBoxArquivosASeremCopiados: TListBox
+      Left = 6
+      Height = 323
+      Top = 0
+      Width = 474
+      ItemHeight = 0
+      TabOrder = 0
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 0
+    Height = 288
+    Top = 408
+    Width = 528
+    Caption = 'Arquivos copiados'
+    ClientHeight = 268
+    ClientWidth = 524
+    TabOrder = 11
+    object ListBoxArquivosCopiado: TListBox
+      Left = 6
+      Height = 264
+      Top = 0
+      Width = 506
+      ItemHeight = 0
+      TabOrder = 0
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 528
+    Height = 288
+    Top = 408
+    Width = 480
+    Caption = 'Arquivos Erro'
+    ClientHeight = 268
+    ClientWidth = 476
+    TabOrder = 12
+    object ListBoxArquivosErros: TListBox
+      Left = 8
+      Height = 232
+      Top = 0
+      Width = 474
+      ItemHeight = 0
+      TabOrder = 0
+    end
+    object ButtonRemoverTentarNovamente: TButton
+      Left = 8
+      Height = 25
+      Top = 239
+      Width = 472
+      Caption = 'Tentar Novamente'
+      TabOrder = 1
+    end
+  end
+  object SelectDirectoryDialogDestino: TSelectDirectoryDialog
+    Left = 392
+    Top = 328
+  end
+  object SelectDirectoryDialogOrigem: TSelectDirectoryDialog
+    Left = 600
+    Top = 328
+  end
+end
